@@ -1,19 +1,16 @@
 (ns lt.plugins.clojure.instarepl
   (:require [lt.object :as object]
-            [lt.objs.metrics :as metrics]
             [lt.objs.eval :as eval]
             [lt.objs.clients :as clients]
             [lt.objs.editor :as editor]
             [lt.objs.editor.pool :as pool]
-            [lt.objs.console :as console]
             [lt.plugins.clojure :as clj]
             [lt.objs.notifos :as notifos]
             [lt.plugins.watches :as watches]
             [lt.objs.tabs :as tabs]
             [lt.util.dom :refer [prevent]]
             [lt.objs.command :as cmd]
-            [crate.binding :refer [bound subatom]]
-            [crate.core :as crate]
+            [crate.binding :refer [bound]]
             [cljs.reader :as reader])
   (:require-macros [lt.macros :refer [behavior defui]]))
 
@@ -248,7 +245,6 @@
 (cmd/command {:command :instarepl
               :desc "Instarepl: Open a clojure instarepl"
               :exec (fn []
-                      (metrics/capture! :editor.clj.instarepl)
                       (add))})
 
 (cmd/command {:command :instarepl.toggle-live
