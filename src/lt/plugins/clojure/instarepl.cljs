@@ -20,7 +20,7 @@
           :triggers #{:eval}
           :reaction (fn [obj auto? pos?]
                       (let [ed (:ed @obj)
-                            v (watches/watched-range obj nil nil clj/clj-watch)
+                            v (watches/watched-range obj nil nil nil)
                             info (-> @obj :info)
                             info (if (editor/selection? ed)
                                    (assoc info :local true :code (editor/selection ed) :auto? false :meta {:start (-> (editor/->cursor ed "start") :line)})
