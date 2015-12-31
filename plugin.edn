@@ -3,5 +3,5 @@
  :author "LightTable team"
  :source "https://github.com/LightTable/ClojureInstarepl"
  :desc "Clojure Instarepl is a repl that re-evals expressions on every change"
- :dependencies {"Clojure" "0.2.0"}
+ :dependencies {"Clojure" "0.3.0"}
  :behaviors "clojure_instarepl.behaviors"}
